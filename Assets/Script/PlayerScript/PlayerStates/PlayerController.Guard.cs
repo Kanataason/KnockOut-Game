@@ -13,7 +13,7 @@ public partial class PlayerController
         bool isCrouching;
         protected override void OnEnter(State prevstate)
         {
-            isCrouching = owner.commandList.Contains(PlayerInputHandler.ActionState.Crouching);
+            isCrouching = owner.commandInput.IsPressed(PlayerInputHandler.ActionState.Crouching);
             //しゃがんでいなかったらアニメーション再生終了
             if(!isCrouching)
                 owner.controller.PlayNormalAnimation<bool>(AnimationId.Crouching,false);

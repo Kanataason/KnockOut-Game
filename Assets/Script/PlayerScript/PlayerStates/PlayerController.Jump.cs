@@ -92,17 +92,17 @@ public partial class PlayerController
         {
             if (CheckCancelAction()) return;
 
-            owner.CheckAction(PlayerInputHandler.InputState.Canceled,PlayerInputHandler.ActionState.Jumping);
+            owner.commandInput.Receive(PlayerInputHandler.InputState.Canceled,PlayerInputHandler.ActionState.Jumping);
         }
         private bool CheckCancelAction()//キャンセルが押されていたかどうかを判断
         {
-            if(owner.commandList.Count > 0)
+            if(owner.commandInput.PressedCommands.Count > 0)
             {
-                foreach (var cancel in owner.commandList)
+                foreach (var cancel in owner.commandInput.PressedCommands)
                 {
                     if (cancel != PlayerInputHandler.ActionState.Jumping) continue;
 
-                    owner.CheckAction(PlayerInputHandler.InputState.Performed,
+                    owner.commandInput.Receive(PlayerInputHandler.InputState.Performed,
                        cancel);
                     return true;
 

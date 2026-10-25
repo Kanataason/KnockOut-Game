@@ -190,9 +190,6 @@ public class UiTextMoveManager : MonoBehaviour
     /// <summary>
     /// 順番にテキストを表示しては消す処理
     /// </summary>
-    /// <param name="state"></param>
-    /// <param name="texts"></param>
-    /// <returns></returns>
     private IEnumerator DisplayTextSequence(CoroutineState state, params UiTextMover[] texts)
     {
 
@@ -232,8 +229,6 @@ public class UiTextMoveManager : MonoBehaviour
     /// <summary>
     /// テキストを表示させてから消す処理
     /// </summary>
-    /// <param name="currentText"></param>
-    /// <returns></returns>
     private IEnumerator PlayTextAnimation(UiTextMover currentText)
     {
         CheckFirstRoundText(currentText);

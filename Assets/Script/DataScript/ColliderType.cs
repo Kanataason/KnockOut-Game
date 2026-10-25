@@ -19,15 +19,5 @@ public class ColliderType: MonoBehaviour
     private void Awake()
     {
         MyCollider = GetComponent<Collider>();
-        //box = GetComponent<BoxCollider>();
     }
-    //private void OnDrawGizmos()
-    //{
-    //    if (box == null) return;
-
-    //    Gizmos.color = Color.red;
-
-    //    Gizmos.matrix = box.transform.localToWorldMatrix;
-    //    Gizmos.DrawWireCube(box.center, box.size);
-    //}
 }

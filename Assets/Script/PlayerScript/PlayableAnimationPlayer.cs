@@ -216,7 +216,6 @@ public class PlayableAnimationPlayer : MonoBehaviour
 
             //なめらかにノーマルアニメーションに戻す
             layerMixer.SetInputWeight(1, Mathf.Lerp(startWeight, 0f, t));
-            //   _layerMixer.SetInputWeight(0, Mathf.Lerp(1f - startWeight, 1f, t));
 
             yield return null;
         }

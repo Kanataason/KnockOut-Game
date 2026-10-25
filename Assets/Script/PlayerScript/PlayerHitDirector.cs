@@ -180,7 +180,6 @@ public class PlayerHitDirector : MonoBehaviour
 
     /// <summary>
     /// ここから下はアタックされた方の処理
-    /// <param name="hitInfo"></param>
 
 
 
@@ -452,7 +451,6 @@ public class PlayerHitDirector : MonoBehaviour
 
         colliderManager.ThrowActive(false);
         playerController.HasInoperable();
-      //  playerController.SetHitOrGuardFlag(HitResult.Hit);
 
         knockBackManager.StopForwardCoroutine();
     }

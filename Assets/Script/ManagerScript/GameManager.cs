@@ -109,7 +109,6 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// UIの状態を変更する
     /// </summary>
-    /// <param name="name"></param>
     public void ChangeState(UiState name)
     {
         CurrentUiState = name;

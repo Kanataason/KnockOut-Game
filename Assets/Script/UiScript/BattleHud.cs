@@ -116,7 +116,6 @@ public class BattleHud : MonoBehaviour
         var gaugeText = state.PlayerId == PlayerIds.Player1 ? Gauge1 : Gauge2;
         var gaugeBar = state.PlayerId == PlayerIds.Player1 ? LevelBarsPlayer1 : LevelBarsPlayer2;
 
-        //gaugeText.text = ((int)value).ToString();
         UpdateGauge(value, gaugeBar);
     }
     private void RefreshGaugeUI(float value, Image[] gauge, PlayerState state)

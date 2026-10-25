@@ -134,8 +134,6 @@ public class PlayerState : MonoBehaviour, ITickable
     /// <summary>
     /// ダメージを与える関数
     /// </summary>
-    /// <param name="damage"></param>
-    /// <param name="Gauge"></param>
     public void TakeDamage(float damage,float Gauge)
     {
 
@@ -155,8 +153,6 @@ public class PlayerState : MonoBehaviour, ITickable
     /// <summary>
     /// ガードできる攻撃か確認
     /// </summary>
-    /// <param name="attackType"></param>
-    /// <returns></returns>
     public bool CanGuard(AttackType attackType)
     {
         bool isGuard = false;

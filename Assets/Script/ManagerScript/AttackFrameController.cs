@@ -367,10 +367,6 @@ public class AttackFrameController : MonoBehaviour, ITickable
             ActiveHurtCollider(AnimationManager.AnimationId.Idle);
         }
     }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="frame"></param>
     private void UpdateAttackMovement(FrameData frame)//技を出している時に動けるかを確認
     {
         if (frame.MoveFrameData.IsStartMoving)
@@ -454,7 +450,6 @@ public class AttackFrameController : MonoBehaviour, ITickable
     /// <summary>
     ///渡されたリストの中身をクリアにしてアクティブにするかしないかを処理する関数
     /// </summary>
-    /// <param name="boxlist"></param>
     private void DisableBoxColliders(List<ColliderType> boxlist)
     {
         boxlist.Clear();

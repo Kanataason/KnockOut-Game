@@ -85,7 +85,6 @@ public class MainManager : MonoBehaviour
     /// <summary>
     /// プレイヤーの入力イベントを登録
     /// </summary>
-    /// <param name="input"></param>
     private void SubscribeUiEvents(PlayerInput input)
     {
         if (input == null) return;

@@ -126,7 +126,7 @@ public partial class PlayerController
             owner.controller.EndAnime();                                 // アニメーションを終了
             owner.playerState.OnResetComboCount();                       // コンボ情報をリセット
             owner.colliderManager.ResetColliderInfo();                   // 当たり判定を初期化
-            owner.commandList.Clear();                                    // 入力コマンドをクリア
+            owner.commandInput.ClearCommands();                                    // 入力コマンドをクリア
             owner.simpleMovement.ResetJumpFlag(false);                   // ジャンプのフラグを直す
         }
     }

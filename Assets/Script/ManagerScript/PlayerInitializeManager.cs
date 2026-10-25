@@ -62,7 +62,6 @@ public class PlayerInitializeManager : MonoBehaviour
         }
     }
 
-    //  private List<(PlayerInputHandler handler, PlayerInput input)> pendingHandlers = new();
     //バトルの初期化を順番に行う 時間で待たずに準備ができたかで進める
     private System.Collections.IEnumerator Start()
     {

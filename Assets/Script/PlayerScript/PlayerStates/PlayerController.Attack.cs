@@ -56,7 +56,7 @@ public partial class PlayerController
         private void SetState(State state)//ステートをセットする
         {
             //現在のステートを取得する
-            prevState = owner.currentActionState;
+            prevState = owner.commandInput.CurrentAction;
 
             //ジャンプしていたらActionStateをジャンプにする
             reverseState.TryGetValue(state, out prevEvent);
@@ -111,7 +111,7 @@ public partial class PlayerController
                 if (!owner.simpleMovement.IsJumping)
                 {
                     owner.CanMoveState();
-                    owner.CheckAction(PlayerInputHandler.InputState.Canceled, prevState);
+                    owner.commandInput.Receive(PlayerInputHandler.InputState.Canceled, prevState);
                 }
             }
         }
@@ -138,7 +138,7 @@ public partial class PlayerController
           if(owner.simpleMovement.UpdateJumps(owner.currentJumpFrame, owner.currentJumpTotalFrame))
             {
                 owner.CanMoveState();
-                owner.CheckAction(PlayerInputHandler.InputState.Canceled, prevState);
+                owner.commandInput.Receive(PlayerInputHandler.InputState.Canceled, prevState);
                 return true;
             }
             return false;
@@ -167,7 +167,7 @@ public partial class PlayerController
         }
         private void RemoveCommandList()//実行したコマンドを消去
         {
-            owner.RemoveCommandList(prevState);
+            owner.commandInput.RemoveCommand(prevState);
         }
     }
 }

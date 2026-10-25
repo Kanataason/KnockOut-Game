@@ -91,7 +91,7 @@ public partial class PlayerController
             owner.CanMoveState();// 行動可能な状態に戻す
             owner.controller.EndAnime();// アニメーションを終了
             owner.colliderManager.ResetColliderInfo();// 当たり判定を初期化
-            owner.commandList.Clear(); // 入力コマンドをクリア
+            owner.commandInput.ClearCommands(); // 入力コマンドをクリア
             owner.simpleMovement.ResetJumpFlag(false);// ジャンプのフラグを直す
         }
     }

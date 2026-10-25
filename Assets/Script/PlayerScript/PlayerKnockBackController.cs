@@ -61,8 +61,6 @@ public class PlayerKnockBackController : MonoBehaviour, ITickable
     /// <summary>
     /// 引数のキャラクターが自分が画面はしかを見ている
     /// </summary>
-    /// <param name="character"></param>
-    /// <returns></returns>
     public bool CheckCanKnockBack(Vector3 character)
     {
         float margin = 0.5f;
@@ -245,8 +243,6 @@ public class PlayerKnockBackController : MonoBehaviour, ITickable
     /// <summary>
     /// 最初の地点と最後の地点を設定
     /// </summary>
-    /// <param name="direction"></param>
-    /// <param name="power"></param>
     public void SetMoveInfo(Transform opponent,Vector3 direction, float power)
     {
         //相手がまだ端にいる時は解除しない 画面端でおかしくなるから
@@ -266,8 +262,6 @@ public class PlayerKnockBackController : MonoBehaviour, ITickable
     /// <summary>
     /// 技モーション中の移動方法イーズアウトを使って出を早くしている
     /// </summary>
-    /// <param name="totalFrame"></param>
-    /// <returns></returns>
     public Vector3 OnStraightMove(int totalFrame)
     {
         var t = (float)currentMoveFrame / totalFrame;

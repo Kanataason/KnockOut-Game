@@ -92,9 +92,6 @@ public class PlayerEffectController : MonoBehaviour
     /// <summary>
     /// 位置と回転を設定
     /// </summary>
-    /// <param name="effect"></param>
-    /// <param name="pos"></param>
-    /// <param name="rotation"></param>
     private void SetPosAndRotation(GameObject effect,Vector3 pos,Quaternion rotation)
     {
         effect.transform.position = pos;

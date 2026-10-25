@@ -157,9 +157,6 @@ public class PlayerMovement : MonoBehaviour, ITickable
     /// <summary>
     /// フレームごとに呼んでジャンプの処理をする
     /// </summary>
-    /// <param name="currentFrame"></param>
-    /// <param name="totalFrames"></param>
-    /// <returns></returns>
     public bool UpdateJumps(int currentFrame,int totalFrames)
     {
         if (IsJumping)

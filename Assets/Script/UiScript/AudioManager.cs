@@ -100,8 +100,6 @@ public class AudioManager : MonoBehaviour
     }
     public async void PlaySe(SeState state)
     {
-      //  SeSource.Stop();
-
         var clip = await lSeList.Get(state);
 
         if (clip == null) return;

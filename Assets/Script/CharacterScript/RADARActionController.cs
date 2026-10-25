@@ -67,7 +67,6 @@ public class RADARActionController : BaseActionController
     /// <summary>
     /// エフェクトに情報をセット
     /// </summary>
-    /// <param name="effect"></param>
     private void SetEffectInfo(GameObject effect,ActionFrameData data)
     {
         //弾のスクリプトを取得

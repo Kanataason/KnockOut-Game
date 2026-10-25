@@ -22,7 +22,7 @@ public enum PlayerAction
 /// </summary>
 
 [RequireComponent(typeof(PlayerEffectController))]
-public partial class PlayerController : MonoBehaviour, ITickable
+public partial class PlayerController : MonoBehaviour, ITickable, IPlayerCommandReceiver
 {
     public enum Event : int//ステートの移行用ステート
     {
@@ -65,14 +65,10 @@ public partial class PlayerController : MonoBehaviour, ITickable
     //技がキャンセル可能かどうかを判断するためのやつ
     public AcceptInput CurrentCancelState = AcceptInput.Disable;
 
-    private PlayerInputHandler.ActionState currentActionState = PlayerInputHandler.ActionState.None;
     public PlayerAction PlayerActionState = PlayerAction.Idle;
 
-    private Dictionary<PlayerInputHandler.ActionState, ActionsInfo> ActionList;
-    private Dictionary<PlayerInputHandler.ActionState, PlayerInputHandler.ActionState> neutralList;
-
-    private Queue<PlayerInputHandler.ActionState> prevCommandList = new();//
-    private List<PlayerInputHandler.ActionState> commandList = new();//プレイヤーの入力を保管するリスト
+    //入力を受け取って、その行動が今できるかを判断する
+    private PlayerCommandInput commandInput;
 
     //アニメーションの現在再生フレーム
     private int currentAnimationFrame;
@@ -156,7 +152,7 @@ public partial class PlayerController : MonoBehaviour, ITickable
     {
         //ステートによって処理するアクションを変えて登録している
         //プレイヤーの入力によって実行するアクションを設定
-        ActionList = new()
+        var actionList = new Dictionary<PlayerInputHandler.ActionState, ActionsInfo>()
         {
             {PlayerInputHandler.ActionState.WeakAttack,new ActionsInfo()
             {ActionEvent = Event.AttackEvent,TransitionAction =controller.OnWeakAttack} },
@@ -189,17 +185,15 @@ public partial class PlayerController : MonoBehaviour, ITickable
             { ActionEvent = Event.CrouchEvent, TransitionAction = null ,
                 IsBlocked = ()=>simpleMovement.IsJumping||PlayerActionState == PlayerAction.Attack}},
 
-            //{PlayerInputHandler.ActionState.CancelAction,new ActionsInfo()
-            //{
-            //    ActionEvent = Event.AttackEvent,TransitionAction = controller.OnCancelAction,
-            //} },
         };
 
-        neutralList = new()
+        var neutralList = new Dictionary<PlayerInputHandler.ActionState, PlayerInputHandler.ActionState>()
         {
             {PlayerInputHandler.ActionState.Crouching,PlayerInputHandler.ActionState.Jumping },
              {PlayerInputHandler.ActionState.Jumping,PlayerInputHandler.ActionState.Crouching},
         };
+
+        commandInput = new PlayerCommandInput(this, actionList, neutralList);
     }
 
     #region Debug
@@ -279,7 +273,7 @@ public partial class PlayerController : MonoBehaviour, ITickable
     {
         //入力を受け取って処理するイベントを登録
         if (playerInputHandler != null)
-        playerInputHandler.OnAction += CheckAction;
+        playerInputHandler.OnAction += OnCommandInput;
 
         //地面についた通知をするイベントを登録
         if (backMotion != null)
@@ -298,7 +292,7 @@ public partial class PlayerController : MonoBehaviour, ITickable
     {
         //入力を受け取って処理するイベントを解除
         if (playerInputHandler != null)
-        playerInputHandler.OnAction -= CheckAction;
+        playerInputHandler.OnAction -= OnCommandInput;
 
         //地面についた通知をするイベントを解除
         if (backMotion != null)
@@ -369,179 +363,6 @@ public partial class PlayerController : MonoBehaviour, ITickable
         stateMachine?.Update();
         stateMachine?.FixedUpdate();
     }
-    /// <summary>
-    /// プレイヤーが入力した動作に紐づいているアクション実行やステートに変更する関数
-    /// </summary>
-    /// <param name="inputState"></param>
-    /// <param name="actionState"></param>
-    private void CheckAction(PlayerInputHandler.InputState inputState, 
-        PlayerInputHandler.ActionState actionState = PlayerInputHandler.ActionState.None)
-    {
-        //ポーズ中なら何もしない
-        if (PauseService.IsPaused) return;
-
-        //ゲーム中でしか動けないようにする
-        if (BattleStateManager.Instance.CurrentBattleState is not BattleStateManager.BattleState.GamePlaying)
-            return;
-
-        //ボタンを離したか確認
-        bool IsCancel = inputState == PlayerInputHandler.InputState.Canceled;
-
-        //ボタンを押した瞬間か確認
-        bool IsPerform = inputState == PlayerInputHandler.InputState.Performed;
-
-
-        if (IsCancel)
-        {
-            if(commandList.Contains(actionState))
-            {
-                RemoveCommandList(actionState);
-            }
-        }
-        if (IsPerform)
-        {
-            if (!commandList.Contains(actionState))
-            {
-                commandList.Add(actionState);
-            }
-
-        }
-
-
-        //アクションが登録されているかを確認
-        if (!ActionList.TryGetValue(actionState, out var currentAction))
-        {
-            return;
-        }
-
-        if (CanPlayCommand(inputState, currentAction, actionState)) return;
-
-        if (IsCancel)
-        {
-            
-            RemoveCommandList(actionState);
-
-            if (CanNeutralPlay()) return;
-            
-            currentActionState = PlayerInputHandler.ActionState.None;
-
-            CanMoveState();
-
-            stateMachine.Dispatch((int)Event.MoveEvent);
-            return;
-        }
-        if (IsPerform)
-        {
-            //キャンセル可能の時ならアクション中でも行動可能
-
-            //ニュートラルの行動かを見る
-            if (CheckNeutral(currentActionState, actionState)) return;
-
-            ChangeIsActionFlag(true);
-            ChangeCanNextActionFlag();
-            //現在のアクションステータスを設定
-            currentActionState = actionState;
-
-            currentAction.TransitionAction?.Invoke();
-
-            stateMachine.Dispatch((int)currentAction.ActionEvent);
-
-        }
-
-    }
-    private bool CanPlayCommand(PlayerInputHandler.InputState inputState,
-      ActionsInfo currentAction, PlayerInputHandler.ActionState actionState = PlayerInputHandler.ActionState.None)
-    {
-        if (CheckCancelAttack(inputState,actionState)) return false;
-        //アタックキャンセル可能期間中なら行動可能にする   
-
-        //行動禁止の条件があったらみる
-        if (currentAction.IsBlocked != null && currentAction.IsBlocked())
-        {
-            return true;
-        }
-        //捕まれていたら何もできないようにする
-        if (playerState.currentState.HasFlag(StatusFlags.IsThrowing)
-            && actionState is not PlayerInputHandler.ActionState.Grabbing)
-        {
-            return true;
-        }
-
-        //アクション中で行動可能かどうかみる可能じゃなければ返す
-        if ((!IsCanNextAction && IsAction) || PlayerActionState == PlayerAction.Inoperable)
-        {
-            return true;
-        }
-
-        //キャンセルできる状態じゃなかったら返す
-        if (CurrentCancelState == AcceptInput.Disable)
-        {
-            return true;
-        }return false;
-    }
-    private bool CheckCancelAttack(PlayerInputHandler.InputState inputState,PlayerInputHandler.ActionState actionState)
-    {
-        //アタックキャンセル可能期間中なら行動可能にする
-
-        bool canCancelAttack = CurrentCancelState is AcceptInput.AttackCancellable or AcceptInput.SmashCancellable;
-
-        bool inputCancel = inputState is PlayerInputHandler.InputState.Canceled;
-
-        bool isTargetHit = targetCurrentState is PlayerTransitionState.Hitting or
-            ( PlayerTransitionState.CrouchGuard or PlayerTransitionState.StandGuard);
-
-        bool isSameAction = currentActionState == actionState;
-
-        // キャンセル可能期間中で、ボタンを押しており、相手にヒット中、かつ同じ技ではない
-        return canCancelAttack && !inputCancel && isTargetHit &&!isSameAction;
-    }
-
-
-
-
-
-    private bool CanNeutralPlay()//これはCPT方式のための関数
-    {
-        if (prevCommandList.Count > 0)//ニュートラル時の物があったら再生
-        {
-            var eventId = prevCommandList.Dequeue();
-            bool canNeutral = false;
-
-            foreach (var state in commandList)
-            {
-                if (state == eventId)
-                    canNeutral = true;
-            }
-            if (!canNeutral) return false;
-
-            if (!ActionList.TryGetValue(eventId, out var actions)) return false;
-
-            ChangeIsActionFlag(true);
-            currentActionState = eventId;
-            stateMachine.Dispatch((int)actions.ActionEvent);
-            actions.TransitionAction?.Invoke();
-            return true;
-        }
-        return false;
-    }
-
-    //リストに入っているステート同士ならニュートラルにする
-    private bool CheckNeutral(PlayerInputHandler.ActionState currentState, PlayerInputHandler.ActionState prevState)
-    {
-        if(neutralList.TryGetValue(currentState,out var resultState))
-        {
-            if(resultState == prevState)
-            {
-                if(prevCommandList.Count == 0)
-                prevCommandList.Enqueue(currentState);//今のステートを入れる
-
-                CheckAction(PlayerInputHandler.InputState.Canceled, currentState);
-                currentActionState = PlayerInputHandler.ActionState.None;
-                return true;
-            }
-        }
-        return false;
-    }
     //プレイヤーの向きを取る処理 バックならtrueがかえる
     private bool PlayerCheckDirection()//自分の向きを取得 フラグで取得
     {
@@ -600,7 +421,6 @@ public partial class PlayerController : MonoBehaviour, ITickable
     /// <summary>
     /// 現在の行動ステートに変更
     /// </summary>
-    /// <param name="state"></param>
     public void ChangePlayerActionState(PlayerAction state)
     {
         PlayerActionState = state;
@@ -608,7 +428,6 @@ public partial class PlayerController : MonoBehaviour, ITickable
     /// <summary>
     /// 技のキャンセルステートを変更
     /// </summary>
-    /// <param name="state"></param>
     public void ChangeCancelActionState(AcceptInput state)
     {
         CurrentCancelState = state;
@@ -616,7 +435,6 @@ public partial class PlayerController : MonoBehaviour, ITickable
     /// <summary>
     /// 行動可能フラグを変更
     /// </summary>
-    /// <param name="isNextAction"></param>
     public void ChangeCanNextActionFlag(bool isNextAction = false)
     {
         IsCanNextAction = isNextAction;
@@ -624,24 +442,13 @@ public partial class PlayerController : MonoBehaviour, ITickable
     /// <summary>
     /// アクション実行フラグを変更
     /// </summary>
-    /// <param name="StartAction"></param>
     private void ChangeIsActionFlag(bool StartAction = false)
     {
         IsAction = StartAction;
     }
     /// <summary>
-    /// 入力履歴を消す
-    /// </summary>
-    /// <param name="state"></param>
-    private void RemoveCommandList(PlayerInputHandler.ActionState state)
-    {
-      commandList.Remove(state);
-    }
-
-    /// <summary>
     /// プレイヤーの回転を止めるフラグを変更
     /// </summary>
-    /// <param name="isRotation"></param>
     public void SetCanRotationFlag(bool isRotation = false)
     {
         IsCanRotation = isRotation;
@@ -649,8 +456,6 @@ public partial class PlayerController : MonoBehaviour, ITickable
     /// <summary>
     /// ヒットorガードのフラグを変更
     /// </summary>
-    /// <param name="hitState"></param>
-    /// <param name="isTrue"></param>
     public void SetHitOrGuardFlag(PlayerHitDirector.HitResult hitState,bool isTrue = true)
     {
         switch (hitState)
@@ -665,10 +470,53 @@ public partial class PlayerController : MonoBehaviour, ITickable
     /// <summary>
     /// 引数で与えられたステートが遷移可能かチェックしに行く
     /// </summary>
-    /// <param name="actionState"></param>
     public void ChangePlayerState(PlayerInputHandler.InputState inputState, PlayerInputHandler.ActionState actionState)
     {
-        CheckAction(inputState, actionState);
+        commandInput.Receive(inputState, actionState);
+    }
+
+    //入力の通知を受け取って判断を任せる
+    private void OnCommandInput(PlayerInputHandler.InputState inputState, PlayerInputHandler.ActionState actionState)
+    {
+        commandInput.Receive(inputState, actionState);
+    }
+
+    bool IPlayerCommandReceiver.CanAcceptInput =>
+        !PauseService.IsPaused &&
+        BattleStateManager.Instance.CurrentBattleState is BattleStateManager.BattleState.GamePlaying;
+
+    bool IPlayerCommandReceiver.IsBusy =>
+        (!IsCanNextAction && IsAction) || PlayerActionState == PlayerAction.Inoperable;
+
+    AcceptInput IPlayerCommandReceiver.CancelState => CurrentCancelState;
+
+    bool IPlayerCommandReceiver.IsTargetHitOrGuard => targetCurrentState is PlayerTransitionState.Hitting or
+            ( PlayerTransitionState.CrouchGuard or PlayerTransitionState.StandGuard);
+
+    bool IPlayerCommandReceiver.IsBeingThrown => playerState.currentState.HasFlag(StatusFlags.IsThrowing);
+
+    void IPlayerCommandReceiver.BeginAction(ActionsInfo action)
+    {
+        ChangeIsActionFlag(true);
+        ChangeCanNextActionFlag();
+
+        action.TransitionAction?.Invoke();
+
+        stateMachine.Dispatch((int)action.ActionEvent);
+    }
+
+    void IPlayerCommandReceiver.BeginNeutralAction(ActionsInfo action)
+    {
+        ChangeIsActionFlag(true);
+        stateMachine.Dispatch((int)action.ActionEvent);
+        action.TransitionAction?.Invoke();
+    }
+
+    void IPlayerCommandReceiver.EndAction()
+    {
+        CanMoveState();
+
+        stateMachine.Dispatch((int)Event.MoveEvent);
     }
     /// <summary>
     /// ヒットステートに強制遷移

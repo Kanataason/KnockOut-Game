@@ -11,9 +11,6 @@ public static class Delay
     /// フレームは描画のフレームではなくBattleTickerのティック数（1秒間に60回）で数える
     /// コルーチンは使わずTickSchedulerで数えるので、ティックが止まっている間は待つ時間も止まる
     /// </summary>
-    /// <param name="owner"></param>
-    /// <param name="frame"></param>
-    /// <param name="func"></param>
     /// <param name="cancelAction">
     /// 条件が合ったら実行される処理
     /// </param>

@@ -23,10 +23,6 @@ public class BulletMovement : MonoBehaviour, ITickable
     /// <summary>
     /// 誰が攻撃して誰を狙っているのかをセットする関数
     /// </summary>
-    /// <param name="target"></param>
-    /// <param name="targetFrameController"></param>
-    /// <param name="ownerColliderManager"></param>
-    /// <param name="data"></param>
     public void SetReference(ColliderManager target, AttackFrameController targetFrameController,
         ColliderManager ownerColliderManager,ActionFrameData data)
     {
@@ -38,8 +34,6 @@ public class BulletMovement : MonoBehaviour, ITickable
     /// <summary>
     /// 弾自体のパラメーターをセットする関数
     /// </summary>
-    /// <param name="velocity"></param>
-    /// <param name="dir"></param>
     public void SetBulletParameter(float velocity,Vector3 dir)
     {
         Velocity = velocity;//速度

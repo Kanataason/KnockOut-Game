@@ -126,7 +126,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// ボタンがあるかを確認
     /// </summary>
-    /// <param name="buttonstate"></param>
     public void CheckSelectButton(StateClass.ButtonState buttonstate)
     {
         var button = ButtonList.Get(buttonstate);
@@ -137,7 +136,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// 引数で渡されたボタンをセレクト状態にする
     /// </summary>
-    /// <param name="button"></param>
     public void SelectedButton(Button button)//ぼたんの選択
     {
         if (button == null)
@@ -152,7 +150,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// 現在選択されているボタンを取得
     /// </summary>
-    /// <returns></returns>
     private Button GetCurrentSelectButton()
     {
         GameObject current = EventSystem.current.currentSelectedGameObject;
@@ -165,7 +162,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// 引数で渡されたStateに紐づいているActionがないかlistから捜して実行
     /// </summary>
-    /// <param name="state"></param>
     public void OnSetActive(StateClass.UiEventType state)
     {
         //Uiの切り替え、選択ボタンの設定、画面のstate変更
@@ -209,7 +205,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// テキストに表示させる
     /// </summary>
-    /// <param name="state"></param>
     private void SetDisplayText(StateClass.TextState state)
     {
         var text = TextList.Get(state);
@@ -235,8 +230,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// 特別なアクションがあるかを確認
     /// </summary>
-    /// <param name="eventInfos"></param>
-    /// <returns></returns>
     private Action<StateClass.PanelState,StateClass.ButtonState> GetSpecialAction(EventInfos eventInfos)
     {
         switch(eventInfos.Special)
@@ -409,7 +402,6 @@ public class UiGimmickManager : MonoBehaviour
     {
         _currentPanel.SetActive(false);
         SetFirstPanel();
-       // CheckSelectButton(StateClass.ButtonState.FirstBattlePause);
         EventSystem.current.SetSelectedGameObject(null);
         UiInputManager.CurrentSelectedObject = null;
     }
@@ -447,7 +439,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// 引数で渡されたStateのパネルを表示
     /// </summary>
-    /// <param name="state"></param>
     private void ChangePanel(StateClass.PanelState state)
     {
         _currentPanel.SetActive(false);
@@ -459,8 +450,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// 引数で渡されたStateのボタンを選んだ状態にする
     /// </summary>
-    /// <param name="state"></param>
-    /// <param name="IsPlayable"></param>
     private void SetButton(StateClass.ButtonState state,bool IsPlayable = false)
     {
         //過去選んだボタンがあるかを確認
@@ -474,8 +463,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     ///引数に渡されてNullじゃないものだけを実行
     /// </summary>
-    /// <param name="Ustate"></param>
-    /// <param name="Tstate"></param>
     private void ApplyUiState(UiState Ustate = UiState.None,TimeLineManager.TimeLineState
                                  Tstate = TimeLineManager.TimeLineState.None)
     {
@@ -532,7 +519,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// 外部からfadeinを開始させるための関数
     /// </summary>
-    /// <param name="duration"></param>
     public void StartFade(float duration,float startAlpha, float endAlpha)
     {
         DisplayEffect.Fade(this, fadeImage, startAlpha,endAlpha,duration);
@@ -540,7 +526,6 @@ public class UiGimmickManager : MonoBehaviour
     /// <summary>
     /// ホーム画面時、MVを流すときに呼ばれる
     /// </summary>
-    /// <param name="IsPlay"></param>
     public void IdleVideoPlay(int IsPlay)//１が再生 2が停止
     {
         float startAlpha = 0;

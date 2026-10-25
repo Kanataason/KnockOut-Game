@@ -45,17 +45,14 @@ public abstract class BaseActionController : MonoBehaviour
     /// <summary>
     /// 指定したステートにアクションが登録されているか確認する関数
     /// </summary>
-    /// <param name="data"></param>
     public virtual void OnCheckAction(ActionFrameData data) { }
     /// <summary>
     /// 攻撃初めの処理を書く関数
     /// </summary>
-    /// <param name="data"></param>
     public virtual void OnAttackStart(ActionFrameData data) { }
     /// <summary>
     /// 攻撃終わりの処理を書く関数
     /// </summary>
-    /// <param name="data"></param>
     public virtual void OnAttackEnd() { }
 
     //ここにキャラ特有の物が増えたら書く

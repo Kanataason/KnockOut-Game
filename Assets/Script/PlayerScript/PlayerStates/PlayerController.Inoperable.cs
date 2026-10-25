@@ -16,7 +16,7 @@ public partial class PlayerController
         private int animationTotalFrame;
         protected override void OnEnter(State prevstate)
         {
-            prevAction = owner.currentActionState;
+            prevAction = owner.commandInput.CurrentAction;
             //当たり判定のリストをクリアにする
             ClearCollider();
 
@@ -128,7 +128,7 @@ public partial class PlayerController
             ResetHitState();
 
             ResetComboCount();
-            owner.RemoveCommandList(prevAction);
+            owner.commandInput.RemoveCommand(prevAction);
             owner.playerState.OffHpBarChange();//Uiに反映
 
             //特定のアニメーションだったらアニメーションを初期化しない

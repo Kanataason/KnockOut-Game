@@ -33,7 +33,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// 小攻撃コールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnWeakAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -48,7 +47,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// 中攻撃コールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnMiddleAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -63,7 +61,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// 大攻撃コールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnStrongAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -79,7 +76,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// 特殊な攻撃コールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnSpecialAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -94,7 +90,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// つかみのコールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnThrow(InputAction.CallbackContext ctx)
     {
         if(ctx.performed)
@@ -109,7 +104,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// 移動系の攻撃コールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnTiltAttack(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
@@ -124,7 +118,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// 必殺技のコールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnSmashAttack(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
@@ -139,24 +132,14 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// 技をキャンセルするコールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnCancelAction(InputAction.CallbackContext ctx)
     {
-        //if (ctx.performed)
-        //{
-        //    OnAction?.Invoke(InputState.Performed, ActionState.CancelAction);
-        //}
-        //else if (ctx.canceled)
-        //{
-        //    OnAction?.Invoke(InputState.Canceled, ActionState.CancelAction);
-        //}
     }
 
 
     /// <summary>
     /// ここからはノーマルアニメーション用のCallBack
     /// </summary>
-    /// <param name="context"></param>
 
 
     public void OnMove(InputAction.CallbackContext context)
@@ -174,7 +157,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// ジャンプのコールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.canceled)
@@ -189,7 +171,6 @@ public class PlayerInputHandler : MonoBehaviour
     /// <summary>
     /// しゃがみのコールバック
     /// </summary>
-    /// <param name="ctx"></param>
     public void OnCrouch(InputAction.CallbackContext ctx)
     {
 

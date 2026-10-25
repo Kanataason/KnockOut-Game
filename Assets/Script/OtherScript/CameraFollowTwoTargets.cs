@@ -94,8 +94,6 @@ public class CameraFollowTwoTargets : MonoBehaviour
     private void InitCameraPos()
     {
         transform.position = startPos;
-
-      //  PlayerInitializeManager.Instance.RemovePlayerPos();
     }
     void LateUpdate()
     {

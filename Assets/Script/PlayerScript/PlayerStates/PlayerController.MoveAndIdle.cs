@@ -26,7 +26,7 @@ public partial class PlayerController
             if (owner.IsCanNextAction)
                 owner.ChangePlayerActionState(PlayerAction.Idle);
 
-            owner.currentActionState = PlayerInputHandler.ActionState.None;
+            owner.commandInput.ClearCurrentAction();
         }
         private void InvokeEventAction()//イベントを発火
         {
@@ -56,9 +56,9 @@ public partial class PlayerController
         private bool CheckBufferCommand()
         {
             if (owner.IsAction) return true;
-            foreach (var state in owner.commandList)
+            foreach (var state in owner.commandInput.PressedCommands)
             {
-                owner.CheckAction(PlayerInputHandler.InputState.Performed, state);
+                owner.commandInput.Receive(PlayerInputHandler.InputState.Performed, state);
                 return true;
             }
             return false;

@@ -84,8 +84,6 @@ public class ColliderManager : MonoBehaviour
     /// <summary>
     /// 相手にヒットしたかガードしたかを知らせる
     /// </summary>
-    /// <param name="hitInfo"></param>
-    /// <param name="hitState"></param>
     public void AttackHit(HitInfo hitInfo,
       PlayerHitDirector.HitResult hitState = PlayerHitDirector.HitResult.Guard)
     {
@@ -268,7 +266,6 @@ public class ColliderManager : MonoBehaviour
     /// <summary>
     /// 投げ判定のOn、Offを切り替える
     /// </summary>
-    /// <param name="IsActive"></param>
     public void ThrowActive(bool IsActive)
     {
         ThrowHurtBox.gameObject.SetActive(IsActive); 

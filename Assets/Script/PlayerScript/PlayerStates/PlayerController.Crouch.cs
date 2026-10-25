@@ -50,7 +50,7 @@ public partial class PlayerController
         private void CheckCrouching()
         {
             //しゃがんでなかったらidleに戻す
-            if(!owner.commandList.Contains(PlayerInputHandler.ActionState.Crouching))
+            if(!owner.commandInput.IsPressed(PlayerInputHandler.ActionState.Crouching))
             {
                 stateMachine.Dispatch((int)Event.MoveEvent);
             }

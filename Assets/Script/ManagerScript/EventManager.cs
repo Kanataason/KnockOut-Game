@@ -278,7 +278,6 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Uiの入力を切断
     /// </summary>
-    /// <param name="playerinput"></param>
     public void UiModuleDisable(PlayerInput playerinput)
     {
         switchActionMap.PlayerInputUiModuleDisable(playerinput);//UiModuleのOff
@@ -286,7 +285,6 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Uiの入力を復活
     /// </summary>
-    /// <param name="playerinput"></param>
     public void UiModuleEnable(PlayerInput playerinput)
     {
         switchActionMap.PlayerInputUiModuleEnable(playerinput);//UiModuleのOn

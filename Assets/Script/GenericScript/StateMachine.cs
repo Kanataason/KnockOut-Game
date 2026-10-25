@@ -40,7 +40,6 @@ public class StateMachine<TOwner>
     public TOwner owner { get; }
     public State CurrentState { get; private set; }
     public int NextState { get; private set; }
-    //public int CurrentEventId { get; private set; }
     /// <summary>
     /// 循環型リスト ぴんぽいんとの要素にアクセスする必要がないときだけ使う
     /// </summary>

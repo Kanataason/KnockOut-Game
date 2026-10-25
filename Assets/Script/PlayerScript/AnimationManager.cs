@@ -243,7 +243,6 @@ public class AnimationManager : MonoBehaviour
     /// <summary>
     /// 参照を取得してアニメーショングラフにアバターマスクを設定
     /// </summary>
-    /// <param name="referencePlayable"></param>
     public async void SetReferencePlayable(PlayableAnimationPlayer referencePlayable)
     {
         playable = referencePlayable;
@@ -300,8 +299,6 @@ public class AnimationManager : MonoBehaviour
     /// <summary>
     /// idle状態とcrouch状態のアニメーションを分けたいとき使う
     /// </summary>
-    /// <param name="state"></param>
-    /// <returns></returns>
     private AvatarState GetAvatarState(AvatarState state)
     {
         if (currentAnimationData == null) return state;
@@ -443,17 +440,6 @@ public class AnimationManager : MonoBehaviour
         }
         PlayAnimation(AnimationId.Throw);
     }
-    //public void OnCancelAction()
-    //{
-    //    if (!playerState.CanUseGauge(10000))
-    //    {
-    //        currentAnimationData = null;
-    //        return;//ゲージが足りなかったら返す
-    //    }
-
-    //    playerState.UseGauge(10000);//ゲージを消費
-    //    EndAnime();
-    //}
     private void PlayGroundAttack(AnimationId id)
     {
         if (TryFlyAttack())
@@ -539,7 +525,6 @@ public class AnimationManager : MonoBehaviour
     /// <summary>
     /// アニメーションコントローラーで再生されるノーマルモーションを再生する
     /// </summary>
-    /// <typeparam name="T"></typeparam>
     /// <param name="animationId"> 何を再生するのか確認ステート</param>
     /// <param name="value"> アニメーションにセットする値</param>
     public void PlayNormalAnimation<T>(AnimationId animationId,T value)
@@ -562,7 +547,6 @@ public class AnimationManager : MonoBehaviour
     /// <summary>
     /// フレーム単位で操作する必要があるアニメーションを再生
     /// </summary>
-    /// <param name="animationId"></param>
     public void PlayAnimation(AnimationId animationId)
     {
         SetAnime(animationId);
