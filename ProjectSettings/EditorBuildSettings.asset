@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: d821eba46e6dfc649a43d263ed53118b
+  - enabled: 1
+    path: Assets/Scenes/GameMenuScene.unity
+    guid: aa924d73cb1d2164187571094bfdfefc
+  - enabled: 1
+    path: Assets/Scenes/SelectCharacterScene.unity
+    guid: d76d1a4239b0eda4c80d0c74de8f0cd8
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: e9c6a5a7cc77cfa4c810a2a078e111a5
+  - enabled: 1
+    path: Assets/Scenes/StaffrollScene.unity
+    guid: 3d80f15026616e5448fea4b365346516
+  - enabled: 0
+    path: Assets/susususususu/GameScene.unity
+    guid: 5bb9cacd4ff44ea4589ce492ce6c7fce
+  - enabled: 0
+    path: Assets/susususususu/Select.unity
+    guid: 187eba70997e0f94cbdc475e0e50f718
+  - enabled: 0
+    path: "Assets/\u5C0F\u6728\u66FD/battle.unity"
+    guid: ff7b9eeb4749f9d439ca68500287a661
+  - enabled: 0
+    path: Assets/kaneda/Kaneda.unity
+    guid: a0b47b51dbe91e44e823679aeeff2cbf
+  - enabled: 0
+    path: Assets/tatuyta/Animator/Prottype/Plottype.unity
+    guid: 660559a240f3456469b622febb8a3905
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 9c39b96c3c1e9324ab75d309e98d6239, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_UseUCBPForAssetBundles: 0

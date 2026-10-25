@@ -1,0 +1,403 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: 03dfdc1a0f97f1d41b53db3f66c968a3
+  m_SerializeEntries:
+  - m_GUID: 028576bc14fc7a84fbee053a3c0b611c
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Hit.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0527112befb8fbc4b82b71bd8362c040
+    m_Address: Assets/Materials/EfectMaterial/Efect/GuardEfect/Guard.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09ff5f561bf54ae459cdacb23d10345e
+    m_Address: Assets/Materials/Prefab/CharacterInstance/hadaka.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f50862e7c88f9640bb3637ee1d52790
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Smash.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 102037cff5965a044924ab4edd62b493
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/StrongAttack.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10652c86afb3e5e4f90d264a1d888803
+    m_Address: Assets/Materials/Animation/AvaterMask/CrouchGuard.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 133a38759e5170d40a29c7530accb62d
+    m_Address: "Assets/Materials/Audio/\u30BB\u30C3\u30C6\u30A3\u30F3\u30B0 (1).mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15f4a5cc784887a489dad81d8d488e6b
+    m_Address: Assets/Materials/Animation/AvaterMask/CrouchHit.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17c6a24f61153ed40bd1791eec2ac338
+    m_Address: Assets/Materials/Prefab/CharacterInstance/RobotHonmono.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ce8b2b75c7b1ff478a46ee4357d07c0
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/RobotWin.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 258b54ecf3fc97e4f9fe2c54b7cfb89b
+    m_Address: "Assets/Materials/Audio/\u30DE\u30CB\u30E5\u30A2\u30EB.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 262c2b784c69dad4db5c5e4935bcd9db
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Throw.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2723b34c903b1f342ab2a81f753f8169
+    m_Address: "Assets/Materials/Audio/\u30AC\u30FC\u30C9.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c6649431f1e99048a77384a131c4b73
+    m_Address: "Assets/Materials/Audio/\u30D0\u30C8\u30EB 1.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d818fea3d6a0e74695bd028fc71c4a3
+    m_Address: Assets/Materials/Audio/select.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2de7d0c944ecf954891c128c26a669ff
+    m_Address: Assets/Materials/Prefab/CharacterInstance/RobotRed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3067f70bef5f74f439d05ea531ccad5b
+    m_Address: Assets/Materials/Audio/Round3.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 374b6f072a143a244b5a3b7ca10b5ba2
+    m_Address: "Assets/Materials/Audio/\u52DD\u5229\uFF22\uFF27\uFF2D.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ff68f64cb636fa44b51f523df774913
+    m_Address: Assets/Materials/EfectMaterial/Efect/StepEfect/StepEfect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 452bd328a1ddb4e4a8b95345ea4e2b37
+    m_Address: Assets/Materials/Audio/hit (1).mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4acba81014129184e9f5038291ef7bf1
+    m_Address: Assets/Materials/Animation/AvaterMask/CrouchKick.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d12a126beebd1043a5c08eca4ce05fa
+    m_Address: Assets/Materials/Audio/KO.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51c5c2beb3486724e98fdcbc5d65322f
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/TiltAttack.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55014997eb0606842976efbd2254e1bc
+    m_Address: "Assets/Materials/Audio/\u96FB\u6483\u9B54\u6CD51.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58e95fc604b942047b7f27f59a44f734
+    m_Address: Assets/Materials/Audio/OP00.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5abfadb8be4a8b849a28df987b5a000b
+    m_Address: Assets/Materials/EfectMaterial/Efect/CharacterEfect/SmashEfe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c8d7f220ff314a4cbe5c2ed84adb728
+    m_Address: Assets/Materials/Audio/youwin.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5db029cd5962f304ba2f2fa08752fd29
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/JumpAttack.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61427db18c88f0c4c8f9da9039368656
+    m_Address: "Assets/Materials/Audio/\u623B\u308B\u52B9\u679C\u97F3.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 623d4b17cae5e5947b8a61ed25903c98
+    m_Address: "Assets/Materials/Audio/\u52DD\u5229\uFF22\uFF27\uFF2D 2.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 642af9a52654c2543b420deefec0bcb1
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Throwing.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 644cfb497b0bc01479eb823ff409fcd5
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Lunching.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6584a6bc04862f748a7577794fb938aa
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Fly.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6941459444c3c7a40b844edf850a08e1
+    m_Address: Assets/Materials/EfectMaterial/Efect/SmashEfect/Charge Efect 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7088a7d6d49bf3e439793c3e0db89bfc
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/SpecialAttack.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71691a518e57e884d81ef76c93a18f58
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/hadakaSmash.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83ae622586b5a364db8b89ce4eb7ecfa
+    m_Address: "Assets/Materials/Audio/\u5165\u529B\u97F3\uFF08\u623B\uFF09.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88d056438af0abf4c93689f272f6cf51
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/hadaka/hadakasmash.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c9382bbd6c756542bd6385daaaa0a2d
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Step.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f3d39fbba655514493d7f13e06c7d4b
+    m_Address: Assets/Materials/EfectMaterial/Efect/HitEfect/HitPowerUp.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ff1ecb4e5ffae14dac42cb7246edae4
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/MidlleAttack.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 942e104cf4ca6734092220020d16ae31
+    m_Address: "Assets/Materials/Audio/\u30BB\u30C3\u30C6\u30A3\u30F3\u30B0.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 977ce5d7d7aeee04e9a04246931d0eb1
+    m_Address: Assets/Materials/Animation/AvaterMask/Normal.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9898c777e880b204e91d1682e31de637
+    m_Address: "Assets/Materials/Audio/\u6BB4\u308B\u97F3.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98e874c6da7f8a64da4b2ad1f3fb36cd
+    m_Address: "Assets/Materials/Audio/\u30D0\u30C8\u30EB.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98f8fc605fd0513428724c35eee2c8e9
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Down.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c22687f593de074e92d49a7bc796bfa
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Guard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dc9cf6fd1967274398f687df5859f86
+    m_Address: Assets/Materials/EfectMaterial/Efect/HitEfect/Hit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a10eaf30afafbf74fac2fa9276632306
+    m_Address: Assets/Materials/Audio/rasubotu.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2aeb695354c0f640b0a13ca04ccb44f
+    m_Address: Assets/Materials/EfectMaterial/Efect/ButtleEfect/Bulley.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6a19cab998019e40aca56c63f3d1925
+    m_Address: "Assets/Materials/Audio/\u52DD\u5229\uFF22\uFF27\uFF2D 1.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9e88615df2227c4f8be0fe5124fa80c
+    m_Address: Assets/Materials/Audio/homeBGM.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af79f9cd66dc89d4f97032109d7f4482
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Panch.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afeef9821f814394ca0f915729555429
+    m_Address: Assets/Materials/Animation/AvaterMask/CrouchUpper.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b64c5276fa1a6aa41b1188a52e3680df
+    m_Address: Assets/Materials/Audio/Round1.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c02080b5e8dfee043a00b396ffbace68
+    m_Address: Assets/Materials/Animation/AvaterMask/CrouchBody.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: caf05ee9a3f2e0a479d0c9723ea9ba8f
+    m_Address: "Assets/Materials/Audio/\u30D1\u30EF\u30FC\u30A2\u30C3\u30D7\uFF12.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc67b5524778a2144ac11ab529f41b9e
+    m_Address: Assets/Materials/Audio/hit.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccf2c63f737d5d34fba42f96b7b30d08
+    m_Address: Assets/Materials/Prefab/CharacterInstance/hadakaRed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd940f54fcd3f914cb38580674ddf17f
+    m_Address: Assets/Materials/Audio/Round2.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce59017f3e8635d4c8ba54892acb0404
+    m_Address: Assets/Materials/Audio/newRound2.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4bc0aa8ba3bc9444b726deeacee6611
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Thrown.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d938709c6bfc70a49b94b5695b43fe44
+    m_Address: Assets/Materials/Audio/OP (1).mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de7e20b79b9705e43832f2d3561e8a90
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Lunch.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e04b3f8d41b8b9043a964fd0e8786a89
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/HadakaWin.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e20a8e9a2f7444b4b84d5294fcc1c595
+    m_Address: "Assets/Materials/Audio/\u5165\u529B\u97F3\uFF08\u9032\uFF09.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e73d3497e16369b4aa28e12d1ac918fe
+    m_Address: "Assets/Materials/Audio/\u30D2\u30C3\u30C8.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e90d770ce83c3754faf2149e1d1b3122
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/GetUp.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea9c35fee67fc52449b2005fec9c82c9
+    m_Address: Assets/Materials/Animation/AvaterMask/Smash1.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efd9ab9e323e10541a582e419df48fae
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/CrouchUpper.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0bf6529ad440cf4ab5173aee30ac0b3
+    m_Address: "Assets/Materials/Audio/\u6C7A\u5B9A\u52B9\u679C\u97F3.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1c57b70af8f39949900522a240aadb8
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Jump.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f34863558938eda499251d8b6da0d214
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/Grap.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc49d03d58ef4044daa5f44fb2d17574
+    m_Address: Assets/Materials/Animation/AvaterMask/JumpAttack.mask
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc569e928ab158846b354de9915233f4
+    m_Address: Assets/Materials/Scriptable/FrameAndAttackData/CrouchKick.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcf4e204695e091418f6f09554c7f915
+    m_Address: "Assets/Materials/Audio/\u30D2\u30C3\u30C8 (2).mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 31135b82fa4f8b54d9cf75951545c81b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a24a32d1bee9de044a0a2544d2b23654, type: 2}
+    - {fileID: 11400000, guid: 6ee5c6788de94c2469bcef67a7e70e96, type: 2}

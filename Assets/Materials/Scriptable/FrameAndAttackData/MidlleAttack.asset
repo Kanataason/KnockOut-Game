@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba4a8e81321e9b40b4dff28fca4000e, type: 3}
+  m_Name: MidlleAttack
+  m_EditorClassIdentifier: 
+  attackType: 1
+  AtAttri: 0
+  AvatarMask: 0
+  ActionName: 1
+  clip: {fileID: 7400000, guid: 0faf38d2d6c18274993317d1eb02b0c5, type: 2}
+  AnimationQueue: []
+  BlockStunTime: 6
+  HitStunTime: 16
+  Damage: 600
+  AddHitGauge: 1600
+  AddGuardGauge: 900
+  UseGauge: 0
+  HitKnockbackDistance: 0.2
+  HitKnockbackTime: 0.3
+  GuardKnockBackDistance: 0.2
+  GuardKnockBackTime: 0.2
+  HitStopFrame: 3
+  GuardStopFrame: 0
+  ContinuousDamage: 0
+  damageReductionPerHit: 0.6
+  knockInfos:
+  - Height: 1
+    Power: 1
+    Duration: 2
+  frameData:
+  - FrameNumber: 1
+    InputState: 1
+    flags: 0
+    MoveFrameData:
+      IsStartMoveing: 0
+      IsEndMoveing: 0
+      IsBack: 0
+      MoveFrame: 0
+      Movetorque: 3
+      Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    EffectFrameData:
+      IsSpownEffect: 0
+      SpownFrame: 0
+      Type: 0
+      RootType: 0
+      Offset: {x: 0, y: 0, z: 0}
+      TotalLifeFrame: 0
+    enableHitBoxes: 
+    disableHitBoxes: 
+    enableHurtBoxes: 01000000
+    disableHurtBoxes: 
+    enableThrowBoxes: 
+    disableThrowBoxes: 
+  - FrameNumber: 7
+    InputState: 0
+    flags: 1
+    MoveFrameData:
+      IsStartMoveing: 0
+      IsEndMoveing: 0
+      IsBack: 0
+      MoveFrame: 0
+      Movetorque: 3
+      Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    EffectFrameData:
+      IsSpownEffect: 0
+      SpownFrame: 0
+      Type: 0
+      RootType: 0
+      Offset: {x: 0, y: 0, z: 0}
+      TotalLifeFrame: 0
+    enableHitBoxes: 00000000
+    disableHitBoxes: 
+    enableHurtBoxes: 
+    disableHurtBoxes: 
+    enableThrowBoxes: 
+    disableThrowBoxes: 
+  - FrameNumber: 10
+    InputState: 0
+    flags: 0
+    MoveFrameData:
+      IsStartMoveing: 0
+      IsEndMoveing: 0
+      IsBack: 0
+      MoveFrame: 0
+      Movetorque: 3
+      Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    EffectFrameData:
+      IsSpownEffect: 0
+      SpownFrame: 0
+      Type: 0
+      RootType: 0
+      Offset: {x: 0, y: 0, z: 0}
+      TotalLifeFrame: 0
+    enableHitBoxes: 
+    disableHitBoxes: 00000000
+    enableHurtBoxes: 0100000004000000
+    disableHurtBoxes: 
+    enableThrowBoxes: 
+    disableThrowBoxes: 
+  - FrameNumber: 12
+    InputState: 1
+    flags: 0
+    MoveFrameData:
+      IsStartMoveing: 0
+      IsEndMoveing: 0
+      IsBack: 0
+      MoveFrame: 0
+      Movetorque: 3
+      Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    EffectFrameData:
+      IsSpownEffect: 0
+      SpownFrame: 0
+      Type: 0
+      RootType: 0
+      Offset: {x: 0, y: 0, z: 0}
+      TotalLifeFrame: 0
+    enableHitBoxes: 
+    disableHitBoxes: 
+    enableHurtBoxes: 
+    disableHurtBoxes: 0100000004000000
+    enableThrowBoxes: 
+    disableThrowBoxes: 
+  - FrameNumber: 21
+    InputState: 1
+    flags: 0
+    MoveFrameData:
+      IsStartMoveing: 0
+      IsEndMoveing: 0
+      IsBack: 0
+      MoveFrame: 0
+      Movetorque: 3
+      Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    EffectFrameData:
+      IsSpownEffect: 0
+      SpownFrame: 0
+      Type: 0
+      RootType: 0
+      Offset: {x: 0, y: 0, z: 0}
+      TotalLifeFrame: 0
+    enableHitBoxes: 
+    disableHitBoxes: 
+    enableHurtBoxes: 
+    disableHurtBoxes: 0000000000000000
+    enableThrowBoxes: 
+    disableThrowBoxes: 

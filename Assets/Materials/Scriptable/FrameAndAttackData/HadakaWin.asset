@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba4a8e81321e9b40b4dff28fca4000e, type: 3}
+  m_Name: HadakaWin
+  m_EditorClassIdentifier: 
+  attackType: 3
+  AtAttri: 0
+  Mask: {fileID: 0}
+  Tag: Player1
+  ActionName: 24
+  clip: {fileID: 7400000, guid: a1721da9e2875e94b89b3c110597fa1f, type: 2}
+  Stiffness: 15
+  BlockStunTime: 4
+  HitStunTime: 60
+  Damage: 0
+  AddHitGauge: 0
+  AddGuardGauge: 0
+  UseGauge: 0
+  HitKnockbackDistance: 0
+  HitKnockbackTime: 0
+  GuardKnockBackDistance: 0
+  GuardKnockBackTime: 0
+  ContinuousDamage: 0
+  damageReductionPerHit: 0
+  knockInfos: []
+  frameData:
+  - FrameNumber: 700
+    actiontype: 0
+    InputState: 0
+    IsCheckHit: 0
+    IsThrowing: 0
+    IsGraping: 0
+    IsPanishCounter: 0
+    enableHitBoxes: []
+    disableHitBoxes: []
+    enableHurtBoxes: []
+    disableHurtBoxes: []
+    enableThrowBoxes: []
+    disableThrowBoxes: []

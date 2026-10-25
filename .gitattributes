@@ -1,0 +1,67 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Scripts (keep CRLF in the working tree)
+*.cs text eol=crlf diff=csharp
+*.shader text eol=crlf
+*.hlsl text eol=crlf
+*.cginc text eol=crlf
+*.compute text eol=crlf
+*.asmdef text eol=crlf
+*.inputactions text eol=crlf
+*.json text
+*.md text
+*.txt text
+
+# Unity YAML (always text, merged with UnityYAMLMerge)
+*.unity text eol=lf merge=unityyamlmerge
+*.prefab text eol=lf merge=unityyamlmerge
+*.meta text eol=lf merge=unityyamlmerge
+*.mat text eol=lf merge=unityyamlmerge
+*.anim text eol=lf merge=unityyamlmerge
+*.controller text eol=lf merge=unityyamlmerge
+*.overrideController text eol=lf merge=unityyamlmerge
+*.mask text eol=lf merge=unityyamlmerge
+*.playable text eol=lf merge=unityyamlmerge
+*.physicMaterial text eol=lf merge=unityyamlmerge
+*.physicsMaterial2D text eol=lf merge=unityyamlmerge
+*.signal text eol=lf merge=unityyamlmerge
+*.preset text eol=lf merge=unityyamlmerge
+*.renderTexture text eol=lf merge=unityyamlmerge
+*.spriteatlas text eol=lf merge=unityyamlmerge
+*.spriteatlasv2 text eol=lf merge=unityyamlmerge
+
+# .asset can be binary (LightingData, NavMesh, ...), so let git detect it
+*.asset merge=unityyamlmerge
+
+# Binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.psd binary
+*.exr binary
+*.hdr binary
+*.tif binary
+*.tiff binary
+*.gif binary
+*.bmp binary
+*.fbx binary
+*.FBX binary
+*.obj binary
+*.blend binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.aif binary
+*.mp4 binary
+*.mov binary
+*.webm binary
+*.ttf binary
+*.otf binary
+*.dll binary
+*.so binary
+*.a binary
+*.bytes binary
+*.bin binary
+*.zip binary

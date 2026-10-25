@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Se
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Se
+  m_GUID: 92ea996ea99d7c340ae821b362e65b70
+  m_SerializeEntries:
+  - m_GUID: e80c933b54e806e4794eb82fa963441c
+    m_Address: Assets/Materials/Audio/Gamestart.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Se
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 31135b82fa4f8b54d9cf75951545c81b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 06823e27b8ee2d84b9d7b1a249d6ccf3, type: 2}
+    - {fileID: 11400000, guid: fdcac601abd7a6243ac767b21adf6eb7, type: 2}
